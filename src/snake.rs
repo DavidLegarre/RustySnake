@@ -1,5 +1,5 @@
-use bevy::prelude::*;
 use crate::arena;
+use bevy::prelude::*;
 
 #[derive(Component)]
 pub struct SnakeHead;
@@ -9,11 +9,11 @@ pub struct SnakeSegment;
 
 const SNAKE_HEAD_COLOR: Color = Color::rgb(0.7, 0.7, 0.7);
 const SNAKE_SEGMENT_COLOR: Color = Color::rgb(0.5, 0.5, 0.5);
-const SPEED: f32 = 5.0;
+// const SPEED: f32 = 5.0;
 
 pub fn snake_movement(
     keyboard_input: Res<ButtonInput<KeyCode>>,
-    mut head_positions: Query<&mut arena::Position, With<SnakeHead>>
+    mut head_positions: Query<&mut arena::Position, With<SnakeHead>>,
 ) {
     for mut pos in head_positions.iter_mut() {
         if keyboard_input.pressed(KeyCode::ArrowLeft) {
