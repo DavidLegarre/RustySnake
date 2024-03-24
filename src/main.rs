@@ -1,5 +1,11 @@
+mod snake_game {
+    pub mod food;
+    pub mod snake;
+}
 mod arena;
-mod snake;
+
+use snake_game::food;
+use snake_game::snake;
 
 use bevy::prelude::*;
 
